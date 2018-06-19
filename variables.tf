@@ -20,7 +20,7 @@ variable "instance_type" {
 }
 
 variable "key_name" {
-  description = "Name of the SSH KeyPair that the Bastion host will use"
+  description = "Name of the SSH KeyPair that the Bastion host will use. This must already exist in AWS"
   type        = "string"
 }
 
