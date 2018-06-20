@@ -1,6 +1,6 @@
 resource "aws_iam_instance_profile" "bastion_ro" {
   name = "${var.network_name}-ec2-ro"
-  role = "${aws_iam_role.ansible_ec2.name}"
+  role = "${aws_iam_role.bastion_ro.name}"
 }
 
 resource "aws_iam_policy" "bastion_ro" {
@@ -10,11 +10,11 @@ resource "aws_iam_policy" "bastion_ro" {
 }
 
 resource "aws_iam_role_policy_attachment" "bastion_ro" {
-  role       = "${aws_iam_role.ansible_ec2.name}"
-  policy_arn = "${aws_iam_policy.ansible_ec2.arn}"
+  role       = "${aws_iam_role.bastion_ro.name}"
+  policy_arn = "${aws_iam_policy.bastion_ro.arn}"
 }
 
-resource "aws_iam_role" "ansible_ec2" {
+resource "aws_iam_role" "bastion_ro" {
   name = "${var.network_name}-ec2-ro"
   path = "/"
 
