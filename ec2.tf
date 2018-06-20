@@ -25,6 +25,6 @@ resource "aws_instance" "bastion" {
   ]
 
   key_name             = "${var.key_name}"
-  iam_instance_profile = "${aws_iam_instance_profile.ansible_ec2.name}"
+  iam_instance_profile = "${aws_iam_instance_profile.bastion_ro.name}"
   tags                 = "${merge(map("network", "${var.network_name}", "Name", "${var.network_name}-bastion"), var.resource_tags)}"
 }
