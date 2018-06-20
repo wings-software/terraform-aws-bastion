@@ -26,5 +26,5 @@ resource "aws_instance" "bastion" {
 
   key_name             = "${var.key_name}"
   iam_instance_profile = "${aws_iam_instance_profile.ansible_ec2.name}"
-  tags                 = "${merge(map("cluster", "${var.cluster_name}"), var.resource_tags)}"
+  tags                 = "${merge(map("network", "${var.network_name}", "Name", "${var.network_name}-bastion"), var.resource_tags)}"
 }

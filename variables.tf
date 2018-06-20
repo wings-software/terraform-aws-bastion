@@ -35,7 +35,7 @@ variable "resource_tags" {
   default     = {}
 }
 
-variable "cluster_name" {
-  description = "Name of the cluster this bastion host will allow access to"
+variable "network_name" {
+  description = "Name of the network this bastion host will allow access to"
   type        = "string"
 }
