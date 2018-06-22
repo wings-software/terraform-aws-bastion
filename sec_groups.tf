@@ -1,5 +1,5 @@
 resource "aws_security_group" "bastion" {
-  name   = "${var.network_name}-bastion"
+  name   = "${var.network_name}-${var.public_subnet_id}-bastion"
   vpc_id = "${var.vpc_id}"
 
   ingress {
