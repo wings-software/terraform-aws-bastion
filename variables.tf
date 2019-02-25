@@ -10,7 +10,7 @@ variable "vpc_id" {
 
 variable "ssh_access" {
   description = "CIDR Mask of hosts that are able to connect to Bastion Host with SSH"
-  type        = "string"
+  type        = "list"
 }
 
 variable "instance_type" {
